@@ -31,4 +31,5 @@ int main()
 
     cout<<sortCheck(arr, n)<<endl;
 
+    return 0;
 }
