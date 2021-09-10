@@ -1,27 +1,24 @@
 #include<iostream>
 using namespace std;
 
-bool Desc(int n)
+void Desc(int n)
 {
-    cout<<n<<endl;
-
-    if(n > 1 and Desc(n-1))
+    if(n == 0)
     {
-        return true;
-        
+        return;
     }
-    return false;
+    cout<<n<<endl;
+    Desc(n-1);
 }
 
-bool Asc(int n, int i)
+void Asc(int n)
 {
-    cout<<i<<endl;
-    i++;
-    if(n > 1 and Asc(n-1, i))
+    if(n == 0)
     {
-
+        return;
     }
-    return 1;
+    Asc(n-1);
+    cout<<n<<endl;
 }
 
 int main()
@@ -30,11 +27,11 @@ int main()
     cout<<"enter the limit:";
     cin>>n;
     cout<<"Numbers till "<<n<<" in ascending order :"<<endl;
-    bool a = Desc(n);
+    Desc(n);
 
     cout<<"Numbers in Desc order :" <<endl;
 
-    bool b = Asc(n, 1);
+    Asc(n);
 
     return 0;
 }
